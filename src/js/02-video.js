@@ -11,8 +11,7 @@ let parsedCurrentTime = JSON.parse(localStorage.getItem(CURRENT_TIME_KEY)) ?? 0;
 player.on('timeupdate', throttle((data) => {
     if (data.percent < 1) {
         localStorage.setItem(CURRENT_TIME_KEY, JSON.stringify(data.seconds));       
-    }
-        
+    }        
     else {
         player.off('timeupdate');
         localStorage.clear();
